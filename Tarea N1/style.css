@@ -25,15 +25,16 @@
         background-color: rgb(0, 10, 66); /* Color de fondo */
         font-size: 20px; /* Tamaño de la letra*/
         font-family: 'Lucida Sans'; /* Fuentes de letra a usar */
-        text-align: right; /* Alineación de texto */
         border: 2px solid rgb(34, 34, 34);
         border-radius: 10px; /* Radio del Borde */
-        width: 600px; /* Ancho */
-        height: 300px; /* Alto */
+        width: 550px; /* Ancho */
+        height: 250px; /* Alto */
+        display: flex; /* Quita el espacio predeterminado por los divs */
+        gap: 35px /* Crea sangrías */
     }
 
     .foto{
-        text-align: start;
+        
         width: 200px; /* Ancho */
         height: 200px; /* Alto */
 
@@ -44,9 +45,6 @@
         margin: 10px; /* Distancia desde los bordes hacia afuera */
     }
 
-    .contenedor-flexible{
-        display: block;
-    }
     .press-start-2p-regular {
         font-family: "Press Start 2P", system-ui;
         font-weight: 400;
