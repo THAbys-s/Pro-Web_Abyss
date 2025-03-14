@@ -33,7 +33,10 @@
     }
 
     .foto{
-        text-align: left;
+        text-align: start;
+        width: 200px; /* Ancho */
+        height: 200px; /* Alto */
+
     }
 
     .button-div{
@@ -42,7 +45,7 @@
     }
 
     .contenedor-flexible{
-        display: flex;
+        display: block;
     }
     .press-start-2p-regular {
         font-family: "Press Start 2P", system-ui;
