@@ -25,18 +25,19 @@
         background-color: rgb(0, 10, 66); /* Color de fondo */
         font-size: 20px; /* Tamaño de la letra*/
         font-family: 'Lucida Sans'; /* Fuentes de letra a usar */
-        text-align: right; /* Alineación de texto */
+        text-align: center; /* Alineación de texto */
         border: 2px solid rgb(34, 34, 34);
         border-radius: 10px; /* Radio del Borde */
-        width: 600px; /* Ancho */
+        width: 500px; /* Ancho */
         height: 300px; /* Alto */
+        
     }
 
     .foto{
-        text-align: start;
-        width: 200px; /* Ancho */
-        height: 200px; /* Alto */
-
+        text-align: center;
+        width: 9px; /* Ancho */
+        height: 5px; /* Alto */
+        display: outside;
     }
 
     .button-div{
