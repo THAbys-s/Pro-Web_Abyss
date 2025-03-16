@@ -3,7 +3,7 @@
 
     /* Etiquetas */
 
-    p 
+    h3 
     {
         color: coral;
     }
@@ -21,49 +21,20 @@
     }
 
     .contenedor{
-        color:rgb(255, 255, 255); /* Color de texto */
-        background-color: rgb(0, 10, 66); /* Color de fondo */
+        color:rgb(245,245,255); /* Color de texto */
+        background-color: rgb(60, 62, 68); /* Color de fondo */
         font-size: 20px; /* Tamaño de la letra*/
-        font-family: 'Lucida Sans'; /* Fuentes de letra a usar */
-<<<<<<< HEAD
-        text-align: center; /* Alineación de texto */
-        border: 2px solid rgb(34, 34, 34);
-        border-radius: 10px; /* Radio del Borde */
-        width: 500px; /* Ancho */
-        height: 300px; /* Alto */
-        
-    }
-
-    .foto{
-        text-align: center;
-        width: 9px; /* Ancho */
-        height: 5px; /* Alto */
-        display: outside;
-=======
+        /* font-family: 'Press Start 2P'; /* Fuentes de letra a usar */
         border: 2px solid rgb(34, 34, 34);
         border-radius: 10px; /* Radio del Borde */
         width: 550px; /* Ancho */
         height: 250px; /* Alto */
-        display: flex; /* Quita el espacio predeterminado por los divs */
-        gap: 35px /* Crea sangrías */
+        display: flex; /* Permite alinear cosas */
+        gap: 35px /* Crea espacios */
     }
-
-    .foto{
-        
-        width: 200px; /* Ancho */
-        height: 200px; /* Alto */
-
->>>>>>> 631d58e17583e731d8c5853048447b2a53258517
-    }
-
-    .button-div{
-        padding: 10px; /* Distancia del elemento hasta los bordes  */
-        margin: 10px; /* Distancia desde los bordes hacia afuera */
-    }
-
+    
     .press-start-2p-regular {
         font-family: "Press Start 2P", system-ui;
-        font-weight: 400;
         font-style: normal;
       }
       
