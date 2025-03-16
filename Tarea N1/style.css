@@ -27,10 +27,10 @@
         /* font-family: 'Press Start 2P'; /* Fuentes de letra a usar */
         border: 2px solid rgb(34, 34, 34);
         border-radius: 10px; /* Radio del Borde */
-        width: 550px; /* Ancho */
-        height: 250px; /* Alto */
+        width: 558px; /* Ancho */
+        height: 203px; /* Alto */
         display: flex; /* Permite alinear cosas */
-        gap: 35px /* Crea espacios */
+        gap: 10px /* Crea espacios */
     }
     
     .press-start-2p-regular {
