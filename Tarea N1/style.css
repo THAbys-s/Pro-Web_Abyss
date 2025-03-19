@@ -29,6 +29,7 @@
         width: 630px; /* Ancho */
         height: 203px; /* Alto */
         display: flex; /* Permite alinear cosas */
+        align-items: center;
         gap: 10px /* Crea espacios */
         }
     
@@ -55,7 +56,7 @@ h1, h2, h3, h4, h5, h6, p
 
 h2 
 {
-    margin-top: 11px; /* Ajusta la separación arriba del h2 */
+    margin-top: 2px; /* Ajusta la separación arriba del h2 */
     padding-left: 5px;
 }
 
@@ -63,10 +64,10 @@ h3
 {
     color: gray;
     font-size: 15.5px;
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
 p {
     font-size: 17px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
