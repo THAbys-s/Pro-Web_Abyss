@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+    <body>
+
+        <h2>Hola a todos</h2>
+
+
+        <form>
+            <label for="title">Titulo: </label>
+            <!-- Input es el encargado de recibir el texto o datos que el usuario quiera ingresar -->
+            <!-- El label contenido, va de la mano del Input, el "for" va de la mano con el "name"-->
+            <input type="text" id="title" name="title"/>
+            
+            <label for="body"> Contenido: </label>
+            <input type="text" id="body" name="body">
+
+            <button type="submit"> Enviar </button>
+        </form>
+
+        <h3> Respuesta: </h3>
+        <pre id="response"> </pre>
+        
+        <!-- Internamente procesa JavaScript, podemos dentro de esas etiquetas de apertura -->
+        <!-- y cierre meter código de javascript. -->
+
+        <script>
+            //El EventListener va a estar prestando atención de todo cambio dentro de submit
+            document
+        .getElementById("postForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); //evita que la pagina sea recargada
+
+          let nuevoPost = {
+            title: document.getElementById("title").value,
+            body: document.getElementById("body").value,
+            userId: 1,
+          };
+
+          let response = await fetch(
+            "https://jsonplaceholder.typicode.com/posts",
+            {
+              method: "POST",
+              body: JSON.stringify(nuevoPost),
+              headers: { "Content-Type": "application/json" },
+            }
+          );
+
+          let data = await response.json();
+          document.getElementById("response").innerText = JSON.stringify(
+            data,
+            null,
+            2
+          );
+        });
+        </script>
+    </body>
+</html>
+
