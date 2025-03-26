@@ -1,0 +1,39 @@
+
+.block
+{
+    display: block;
+    width: 200px;
+    background-color: aquamarine;
+    padding: 10px;
+    margin: 10px;
+}
+
+.inline
+{
+    display: inline; /* Previene que el ancho sea afectado */
+    background-color: brown;
+    padding: 5px;
+}
+
+.inline-block
+{
+    display: inline-block;
+    background-color: rgb(56, 165, 42);
+    padding: 5px;
+    margin: 5px;
+}
+
+.flex-container
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: chocolate;
+    padding: 10px;
+}
+
+.flex-item
+{
+    background-color: lightseagreen;
+    padding: 10px;
+    margin: 5px;
+}
