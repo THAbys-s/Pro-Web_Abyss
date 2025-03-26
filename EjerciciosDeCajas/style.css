@@ -1,5 +1,23 @@
 
 
+
+.rectangulo
+{
+    background-color: rgb(50, 130, 181);
+    width: 260px;
+    height: 290px;
+    text-align: center;
+    border-radius: 1px;
+    font-family: Helvetica;
+}
+
+h2
+{
+    color: rgb(184, 223, 247); 
+    padding-top: 30px;
+    font-size: 30px;
+}
+
 .block
 {
     display: block;
