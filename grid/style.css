@@ -15,7 +15,7 @@
 img {
   width: 50%;
   object-fit: cover;
-  aspect-ratio: 0.1/0.1; /* Aspect-Ratio modifica la relación de aspecto de la foto 
+  aspect-ratio: 0/0; /* Aspect-Ratio modifica la relación de aspecto de la foto 
   valor opcional en este ejercicio. */
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 .rectangulo:hover {
-  border: 5px solid aqua;
+  border: 2px solid aqua;
   transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
   transition: cubic-bezier(ease-out);
 }
