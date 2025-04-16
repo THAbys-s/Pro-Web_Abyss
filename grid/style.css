@@ -1,0 +1,30 @@
+.grilla {
+  display: grid;
+  /* grid-template-columns: 200px 200px 200px; */
+  /* grid-template-columns: repeat(3, 200px); */
+  /* "repeat" repite con el primer valor la cantidad de veces
+    y con el segundo párametro recibe el tamaño para cada uno */
+  grid-template-columns: repeat(3, 1fr);
+  /* fr es una fracción que divide la página en la cantidad que
+    diga el primer valor de la función */
+  grid-auto-rows: auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: chocolate;
+  padding: 10px;
+}
+
+img {
+  width: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Aspect-Ratio modifica la relación de aspecto de la foto 
+  */
+}
+
+/* body {
+  background-image: url("/grid/imagenes/space.jpg");
+}
+*/
