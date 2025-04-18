@@ -39,8 +39,9 @@ body {
 
 .rectangulo:hover {
   border: 2px solid aqua;
-  transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
   transition: cubic-bezier(ease-out);
+  cursor: pointer;
 }
 
 @media (max-width: 1024px) {
