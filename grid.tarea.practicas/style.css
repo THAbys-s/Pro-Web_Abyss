@@ -24,7 +24,7 @@ img {
   text-align: center;
 }
 body {
-  background-image: url("/grid/imagenes/pokemon_background.webp");
+  background-image: url("/grid.tarea.practicas/imagenes/pokemon_background.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
