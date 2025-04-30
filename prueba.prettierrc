@@ -1,0 +1,7 @@
+{
+  "singleQuote": true,
+  "bracketSpacing": true
+}
+
+Tuve que añadir esto para que el prettier 
+no me corrija la indentación
