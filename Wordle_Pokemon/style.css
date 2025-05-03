@@ -1,0 +1,90 @@
+/* body {
+    background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/city.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  } */
+
+/* ctrl + k + c to comment */
+
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+} 
+
+#background{
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}
+
+.rectangulo{ /* Contenedor del header */
+    background-color: rgb(245, 245, 245);
+    box-shadow: 1px 5px 5px rgb(222, 222, 222);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_del_main{
+    background-color: rgb(41, 86, 80);
+    height: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_dentro_del_main{
+    background-color: rgb(105, 189, 178);
+    height: 100%;
+    width: 50%;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.grillas{
+    display: flex;
+    justify-content: center;
+    gap: 1.5px;
+}
+
+.bloque_de_la_grilla{
+    height: 45px;
+    width: 45px;
+    background-color: rgb(253, 252, 252);
+    border: solid rgb(133, 133, 133);
+    margin-top: 10px;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.grilla_final{
+    padding-bottom: 20px;
+}
+
+
+@media (max-width: 1024px) {
+    #grillas {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+@media (max-width: 768px) {
+    #grillas {
+        grid-template-columns: repeat(1, 1fr);
+        max-height: 50%;
+    }
+  }
