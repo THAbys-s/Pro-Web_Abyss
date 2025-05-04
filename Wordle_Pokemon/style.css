@@ -44,6 +44,7 @@ img{
     justify-content: center;
 }
 
+
 .contenedor_dentro_del_main{
     background-color: rgb(105, 189, 178);
     height: 100%;
@@ -51,7 +52,8 @@ img{
     margin: 5px;
     display: flex;
     justify-content: center;
-
+    border: 2.5px solid rgb(255, 255, 255);
+    border-radius: 30px;
 }
 
 .grillas{

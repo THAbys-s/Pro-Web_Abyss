@@ -1,5 +1,4 @@
 
-
 const Pokemon0_100 = ['bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon', 'charizard', 'squirtle', 'wartortle', 'blastoise', 'caterpie', 'metapod', 'butterfree', 'weedle', 'kakuna', 'beedrill', 'pidgey', 'pidgeotto', 'pidgeot', 'rattata', 'raticate', 'spearow', 'fearow', 'ekans', 'arbok', 'pikachu', 'raichu', 'sandshrew', 'sandslash', 'nidoran♀', 'nidorina', 'nidoqueen', 'nidoran♂', 'nidorino', 'nidoking', 'clefairy', 'clefable', 'vulpix', 'ninetales', 'jigglypuff', 'wigglytuff', 'zubat', 'golbat', 'oddish', 'gloom', 'vileplume', 'paras', 'parasect', 'venonat', 'venomoth', 'diglett', 'dugtrio', 'meowth', 'persian', 'psyduck', 'golduck', 'mankey', 'primeape', 'growlithe', 'arcanine', 'poliwag', 'poliwhirl', 'poliwrath', 'abra', 'kadabra', 'alakazam', 'machop', 'machoke', 'machamp', 'bellsprout', 'weepinbell', 'victreebel', 'tentacool', 'tentacruel', 'geodude', 'graveler', 'golem', 'ponyta', 'rapidash', 'slowpoke', 'slowbro', 'magnemite', 'magneton', "farfetch'd", 'doduo', 'dodrio', 'seel', 'dewgong', 'grimer', 'muk', 'shellder', 'cloyster', 'gastly', 'haunter', 'gengar', 'onix', 'drowzee', 'hypno', 'krabby', 'kingler', 'voltorb', /* ... */];
 
 const Pokemon100_200 = [
@@ -39,17 +38,38 @@ getTime()	|  Get time (milliseconds since January 1, 1970)
 */
 
 const fondo = document.getElementById("background");
+const shadows = document.getElementsByClassName("contenedor_del_main");
 const dia_de_la_semana = new Date().getDay()
 const dia = dia_de_la_semana;
 let url;
+let box_color;
 
 switch (dia) {
-case 1: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/volcano.jpg'; break
-case 2: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/city.jpg'; break
-case 3: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg'; break
-case 4: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/cave.jpg'; break
-case 5: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/glacier.jpg'; break
-case 6: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/canyon.jpg'; break
+case 0: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/coast.jpg'; 
+box_color = 'green';
+break
+case 1: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/volcano.jpg'; 
+box_color = 'rgb(166, 181, 87)';
+break
+case 2: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/city.jpg'; 
+box_color = 'gold';
+break
+case 3: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg'; 
+box_color = 'greenyellow';
+break
+case 4: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/cave.jpg'; 
+box_color = 'rgb(63, 164, 107)';
+break
+case 5: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/glacier.jpg'; 
+box_color = 'rgb(67, 67, 255)';
+break
+case 6: url = 'https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/canyon.jpg'; 
+box_color = 'rgb(222, 208, 181)';
+break
+ }
+
+for (let el of shadows) {
+  el.style.boxShadow = `0px 9px 60px ${box_color}`;
  }
 
 fondo.style.backgroundImage = `url('${url}')`; 
@@ -76,6 +96,41 @@ for (let contador = 0; contador < 5; contador++) {
   
     contenedor_secundario.appendChild(bloque_de_grilla);
     //Añade al Div 'bloques', el nuevo div creado en memoria con 'createElement'.
+    bloque_de_grilla.setAttribute("tabindex", "0"); //Permite la conexión con el teclado.
+    
+    /* 
+
+    Keypress indica que cáracter fue elegido/seleccionado.
+    Keydown y Keyup indican en cambio, que tecla fue presionada.
+    
+    */ 
+    bloque_de_grilla.addEventListener("keydown", (e) => {
+      const letra = e.key.toUpperCase(); //Convierte la letra ingresada a una mayúscula.
+      if (/^[A-ZÑ]$/.test(letra)) { //Devuelve booleano True si lo ingresado en la casilla
+        // esta dentro de la A a la Z. (Dado que utiliza .test con la variable Letra)
+        bloque_de_grilla.textContent = letra; //Se escribirá el cáracter.
+
+        const siguiente = bloque_de_grilla.nextElementSibling;
+        if (siguiente && siguiente.classList.contains("bloque_de_la_grilla")) {
+          siguiente.focus();
+        }
+      } else if (e.key === "Backspace") {
+          bloque_de_grilla.textContent = "";
+
+        if (bloque_de_grilla.textContent != "") { //Si el cáracter escrito es distinto a
+          // nada, entonces puede borrar.
+          bloque_de_grilla.textContent = ""; //Iguala la casilla a nada. Por lo que esta borrando
+          // de una forma indirecta. 
+        } else { // En caso de ya estar en nada, cambia el focus a la anterior casilla.
+          const anterior = bloque_de_grilla.previousElementSibling; //Es una variable creada
+          // para ir al anterior elemento (el anterior div).
+          if (anterior && anterior.classList.contains("bloque_de_la_grilla")) {
+            anterior.focus(); //Cambia el foco en caso de que una 
+            anterior.textContent = "";
+          }
+        }
+      } 
+    });
  }
 }
 
