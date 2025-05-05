@@ -105,17 +105,28 @@ for (let contador = 0; contador < 5; contador++) {
     
     */ 
     bloque_de_grilla.addEventListener("keydown", (e) => {
-      const letra = e.key.toUpperCase(); //Convierte la letra ingresada a una mayúscula.
-      if (/^[A-ZÑ]$/.test(letra)) { //Devuelve booleano True si lo ingresado en la casilla
+    const letra = e.key.toUpperCase(); //Convierte la letra ingresada a una mayúscula.
+      
+    if (/^[A-ZÑ]$/.test(letra)) { //Devuelve booleano True si lo ingresado en la casilla
         // esta dentro de la A a la Z. (Dado que utiliza .test con la variable Letra)
         bloque_de_grilla.textContent = letra; //Se escribirá el cáracter.
 
+        bloque_de_grilla.classList.remove("animate-rotate"); //Quita la animación que rota los bloques
+        void bloque_de_grilla.offsetWidth; // Solo reinicia la animación del bloque.
+        bloque_de_grilla.classList.add("animate-rotate"); // Reproduce/hace que la animacion se agregué al bloque.
+
+        bloque_de_grilla.setAttribute("data-escrito", "true");
+
+        setTimeout(() => {
+          bloque_de_grilla.textContent = letra;
+        }, 300);
         const siguiente = bloque_de_grilla.nextElementSibling;
         if (siguiente && siguiente.classList.contains("bloque_de_la_grilla")) {
           siguiente.focus();
         }
-      } else if (e.key === "Backspace") {
-          bloque_de_grilla.textContent = "";
+      } 
+      else if (e.key === "Backspace") {
+        bloque_de_grilla.textContent = "";
 
         if (bloque_de_grilla.textContent != "") { //Si el cáracter escrito es distinto a
           // nada, entonces puede borrar.
@@ -130,9 +141,58 @@ for (let contador = 0; contador < 5; contador++) {
           }
         }
       } 
-    });
- }
-}
+      else if (e.key === "Enter") {
+        const fila = bloque_de_grilla.parentElement;
+        const casillas = fila.querySelectorAll(".bloque_de_la_grilla");
+      
+        const filaCompleta = Array.from(casillas).every(casilla => {  // Revisa que todas las casillas tengan una letra.
+          const texto = casilla.textContent.trim();
+          return /^[A-ZÑ]$/.test(texto);
+        });
+      
+        if (filaCompleta) {
+          casillas.forEach(casilla => {
+            casilla.setAttribute("contenteditable", "false");
+            casilla.setAttribute("tabindex", "-1");
+            casilla.classList.add("bloqueado");
+          });
+      
+          casillas.forEach((casilla, index) => {
+            const letraCasilla = casilla.textContent.trim();
+            let color;
+      
+            switch (true) {
+              case (letraCasilla === Pokemon_Secreto[index]):
+                color = "green";
+                break;
+              case (Pokemon_Secreto.includes(letraCasilla)):
+                color = "orange";
+                break;
+              default:
+                color = "gray";
+                break;
+            }
+      
+            casilla.style.backgroundColor = color;
+            casilla.setAttribute("contenteditable", "false");
+            casilla.setAttribute("tabindex", "-1");
+            casilla.classList.add("bloqueado");
+          });
+        } else {
+          alert("Faltan letras en la fila");
+        }
+      
+        const siguienteFila = fila.nextElementSibling;
+      
+        if (siguienteFila) {
+          const siguienteCasilla = siguienteFila.querySelector(".bloque_de_la_grilla");
+          if (siguienteCasilla) {
+            siguienteCasilla.focus();
+          }
+        }
+      }
+})}}; 
+  
 
 const ultimo_grid = contenedor_mayor.lastElementChild;
 ultimo_grid.classList.add("grilla_final");
