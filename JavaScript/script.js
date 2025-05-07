@@ -98,3 +98,56 @@ for (let i = 0; i < Array_Propio.length; i++) {
     console.log(Array_Propio[i]); // Muestra el Array
     // con su posición.
 }
+
+
+// Push() agrega un elemento al final de la lista. (Es el append() de JS)
+Array_Propio.push('Matias')
+console.log(Array_Propio);
+
+
+// Pop() elimina el ultimo elemento de la lista, y es capaz de almacenar 
+// lo borrado en una variable.
+const ultimo_del_array = Array_Propio.pop();
+console.log(ultimo_del_array);
+
+
+// Unshift() añadé un elemento al inicio de la lista.
+Array_Propio.unshift('Hice_un_juego');
+console.log(Array_Propio);
+
+
+// Shift() elimina el primer elemento de una lista, y lo almacena.
+const elemento_borrado = Array_Propio.shift();
+console.log(elemento_borrado);
+
+
+// Foreach( => {} ) recorre la lista solo una vez y no modifica nada.
+Array_Propio.forEach((item, index, Array_Propio) => {
+    console.log(
+        'index', //Solo le pone un titulo antes de mostrarlo.
+        index,
+        'item',
+        item,
+        'Array',
+        Array_Propio
+    )
+})
+
+
+// Map() recorre la lista, la modifica con una funcion y retorna en una copia.
+
+const nuevoArray = Array_Propio.map((item, index)=>{
+    const num = 2
+    console.log(index, 'item', item);
+    return (item += num);
+})
+
+console.log('Array Modificado', nuevoArray)
+
+
+// Filter crea un array nuevo con los elementos que cumplan la condición.
+
+const ArrayNum = [2, 4, 5, 6];
+const Numeros_Pares = ArrayNum.filter((item) => item % 2 === 0);
+
+console.log(Numeros_Pares);
