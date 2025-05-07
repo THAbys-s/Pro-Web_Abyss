@@ -15,8 +15,10 @@ const Pokemon100_200 = [
   
 let Pokemon_Total = [...Pokemon0_100, ...Pokemon100_200]
 
-const Pokemon_Secreto = Pokemon_Total[Math.floor(Math.random() * Pokemon_Total.length)]
+const Lista_De_Pokemon_Secreto = Pokemon_Total[Math.floor(Math.random() * Pokemon_Total.length)]
 //console.log(TotalDePokemones)
+
+const Pokemon_Secreto = Lista_De_Pokemon_Secreto.toUpperCase();
 console.log(Pokemon_Secreto)
 
 /*
@@ -152,6 +154,7 @@ for (let contador = 0; contador < 5; contador++) {
       
         if (filaCompleta) {
           casillas.forEach(casilla => {
+            casillas./////////////////////////////////////////////////////////////////////////////
             casilla.setAttribute("contenteditable", "false");
             casilla.setAttribute("tabindex", "-1");
             casilla.classList.add("bloqueado");
@@ -178,9 +181,23 @@ for (let contador = 0; contador < 5; contador++) {
             casilla.setAttribute("tabindex", "-1");
             casilla.classList.add("bloqueado");
           });
-        } else {
+          // Verifica si se acertó o si terminó el juego
+          const aciertoCompleto = Array.from(casillas).every((casilla, index) => {
+            return casilla.textContent.trim() === Pokemon_Secreto[index];
+          });
+
+          if (aciertoCompleto) {
+            setTimeout(() => alert("¡Felicidades! Has adivinado el Pokémon."), 100);
+          } else if (fila.classList.contains("grilla_final")) {
+            setTimeout(() => alert(`¡Perdiste! El Pokémon era: ${Pokemon_Secreto}`), 100);
+          }
+
+        } 
+        
+        else {
           alert("Faltan letras en la fila");
         }
+        
       
         const siguienteFila = fila.nextElementSibling;
       
