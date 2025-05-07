@@ -154,7 +154,6 @@ for (let contador = 0; contador < 5; contador++) {
       
         if (filaCompleta) {
           casillas.forEach(casilla => {
-            casillas./////////////////////////////////////////////////////////////////////////////
             casilla.setAttribute("contenteditable", "false");
             casilla.setAttribute("tabindex", "-1");
             casilla.classList.add("bloqueado");
