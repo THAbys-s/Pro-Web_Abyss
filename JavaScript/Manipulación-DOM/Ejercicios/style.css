@@ -1,0 +1,15 @@
+#grilla {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 15px;
+}
+
+.rectangulo {
+  display: flex;
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  height: auto;
+  width: 150px;
+  justify-content: center;
+}
