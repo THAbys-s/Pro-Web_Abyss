@@ -1,4 +1,4 @@
-/*
+
 const Pokemon0_100 = ['bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon', 'charizard', 'squirtle', 'wartortle', 'blastoise', 'caterpie', 'metapod', 'butterfree', 'weedle', 'kakuna', 'beedrill', 'pidgey', 'pidgeotto', 'pidgeot', 'rattata', 'raticate', 'spearow', 'fearow', 'ekans', 'arbok', 'pikachu', 'raichu', 'sandshrew', 'sandslash', 'nidoran♀', 'nidorina', 'nidoqueen', 'nidoran♂', 'nidorino', 'nidoking', 'clefairy', 'clefable', 'vulpix', 'ninetales', 'jigglypuff', 'wigglytuff', 'zubat', 'golbat', 'oddish', 'gloom', 'vileplume', 'paras', 'parasect', 'venonat', 'venomoth', 'diglett', 'dugtrio', 'meowth', 'persian', 'psyduck', 'golduck', 'mankey', 'primeape', 'growlithe', 'arcanine', 'poliwag', 'poliwhirl', 'poliwrath', 'abra', 'kadabra', 'alakazam', 'machop', 'machoke', 'machamp', 'bellsprout', 'weepinbell', 'victreebel', 'tentacool', 'tentacruel', 'geodude', 'graveler', 'golem', 'ponyta', 'rapidash', 'slowpoke', 'slowbro', 'magnemite', 'magneton', "farfetch'd", 'doduo', 'dodrio', 'seel', 'dewgong', 'grimer', 'muk', 'shellder', 'cloyster', 'gastly', 'haunter', 'gengar', 'onix', 'drowzee', 'hypno', 'krabby', 'kingler', 'voltorb'];
 
 const Pokemon100_200 = [
@@ -15,29 +15,29 @@ const Pokemon100_200 = [
   
 let Pokemon_Total = [...Pokemon0_100, ...Pokemon100_200];
 
-*/
+const Pokemon_Secreto = Pokemon_Total[Math.floor(Math.random() * Pokemon_Total.length)].toUpperCase();
 
-let Pokemon_Total = [];
+// let Pokemon_Total = [];
 
-const obtenerPokemones = async () => {
-    try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1000');
-        const data = await response.json();
+// const obtenerPokemones = async () => {
+//     try {
+//         const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1000');
+//         const data = await response.json();
 
-        // Guardamos todos los nombres en el array global
-        Pokemon_Total = data.results.map(pokemon => pokemon.name);
+//         // Guardamos todos los nombres en el array global
+//         Pokemon_Total = data.results.map(pokemon => pokemon.name);
 
-        // Seleccionamos uno al azar
-        const Lista_De_Pokemon_Secreto = Pokemon_Total[Math.floor(Math.random() * Pokemon_Total.length)];
-        const Pokemon_Secreto = Lista_De_Pokemon_Secreto.toUpperCase();
+//         // Seleccionamos uno al azar
+//         const Lista_De_Pokemon_Secreto = Pokemon_Total[Math.floor(Math.random() * Pokemon_Total.length)];
+//         const Pokemon_Secreto = Lista_De_Pokemon_Secreto.toUpperCase();
 
-        console.log('Pokémon secreto:', Pokemon_Secreto);
-    } catch (error) {
-        console.error('Error al obtener Pokémon:', error);
-    }
-};
+//         console.log('Pokémon secreto:', Pokemon_Secreto);
+//     } catch (error) {
+//         console.error('Error al obtener Pokémon:', error);
+//     }
+// };
 
-obtenerPokemones();
+// obtenerPokemones();
 /*
 
 Formas de usar Date() en JavaScript
