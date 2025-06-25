@@ -1,38 +1,32 @@
+import { useState } from 'react'
 import './App.css'
-import Usuario from './components/usuarios/Usuario'
-import { Proveedor } from './components/proveedores/proveedor';
-import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [characters, setCharacters] = useState([])
+  const [nombre, setNombre] = useState('');
 
-/*
+  const handleClick = () => {
+    console.log(nombre)
+  }
 
-useEffect va a ejecutar el código en su interior
-tantas veces como las dependencias se actualicen.
-En caso de no haber dependencias, se va a ejecutar
-solo antes del primer renderizado.
-
-*/
-
-  useEffect(() =>{
-    fetch('https://rickandmortyapi.com/api/character')
-    .then((data) => data.json())
-    .then((response) => setCharacters(response.results));
-  }, []);
+  const handleInputChange = (event) => {
+    setNombre(event.target.value)
+  }
 
   return (
   <>
+    <input type='text' placeholder='Nombre aquí' onChange={handleInputChange} value={nombre}/>
+    <button onClick={handleClick}>Mostrar</button>
+    {nombre && <h2>{nombre}</h2>}
 
-  {characters ? (
-    characters.map((item, index) => <p> {item.name} </p>)) : ( <> ...Cargando </>)}
-
-  Hola Mundo
-  <button>Hola</button>
-  <Usuario />
-  <Proveedor name = {'Abyss'}/>
+    {nombre === '' ? <>Hola</> : <>Chau</>}
   </>
+
+// Si el nombre existe lo imprime debajo.
+
+// Si queremos que la función se use al momento
+// le ponemos el párentesis.
+
   );
 }
 
