@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-
-  const [nombre, setNombre] = useState('');
+  const [nombre, setNombre] = useState("");
 
   const handleClick = () => {
-    console.log(nombre)
-  }
+    console.log(nombre);
+  };
 
+  // Siempre que vayamos a hacer un click/interactuar
+  // el evento se va a llamar ' Handle '
+
+  // Vemos 'handleClick' como la función, no como la ejecución 'handleClick()'.
   const handleInputChange = (event) => {
-    setNombre(event.target.value)
-  }
+    setNombre(event.target.value);
+  };
 
   return (
-  <>
-    <input type='text' placeholder='Nombre aquí' onChange={handleInputChange} value={nombre}/>
-    <button onClick={handleClick}>Mostrar</button>
-    {nombre && <h2>{nombre}</h2>}
+    <>
+      <input
+        type="text"
+        placeholder="Nombre aquí"
+        onChange={handleInputChange}
+        value={nombre}
+      />
+      <button onClick={handleClick}>Mostrar</button>
+      {nombre && <h2>{nombre}</h2>}
 
-    {nombre === '' ? <>Hola</> : <>Chau</>}
-  </>
+      {nombre === "" ? <>Hola</> : <>Chau</>}
+    </>
 
-// Si el nombre existe lo imprime debajo.
+    // Si el nombre existe lo imprime debajo.
 
-// Si queremos que la función se use al momento
-// le ponemos el párentesis.
-
+    // Si queremos que la función se use al momento
+    // le ponemos el párentesis.
   );
 }
 
 export default App;
-
