@@ -1,10 +1,11 @@
-import React, { Children } from "react";
+import React from "react";
+
 const NombreContext = React.createContext();
 
 export function NombreProvider({ children }) {
   const name = "Juan";
 
   return (
-    <NombreContext.Provider valor={name}>{children}</NombreContext.Provider>
+    <NombreContext.Provider value={name}>{children}</NombreContext.Provider>
   );
 }

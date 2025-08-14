@@ -1,11 +1,13 @@
 import "./App.css";
-import { hijo_1 } from "./components/hijo_1";
-import { NombreProvider } from "./components/globals/NombreContext";
+import { Hijo1 } from "./componentes/hijo1";
+import { NombreProvider } from "./globals/NombreContext";
 
 function App() {
   return (
     <>
-      <hijo_1 nombre="Lalo" />
+      <NombreProvider>
+        <Hijo1 nombre={"Juan"} />
+      </NombreProvider>
     </>
   );
 }
